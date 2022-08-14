@@ -18,7 +18,7 @@ export default function Hotel(props){
   
   let stars  = []
   for(let i=0; i<five; i++){
-      stars.push(<StarBorderIcon/>)
+      stars.push(<StarBorderIcon key={i}/>)
   }
 
   console.log(props.propertDescription)
@@ -31,10 +31,11 @@ export default function Hotel(props){
         
            <Box sx={{display:'flex', flexDirection:'row', borderBottom:'1px solid #edf2f7', p:2,m:2,fontWeight:800, fontSize:20 ,fontFamily:'sans-serif', color:blue[400]}}>
            <Link href={{pathname : "/",
-                 }}  >
-                  <a>
-           Hotel <Box sx={{color:'#f542a5'}}>Finder</Box>
-           </a>
+                 }}  key='homelink'>
+                 
+                  <>
+           Hotel <Box sx={{color:'#f542a5'}} key='finder'>Finder</Box>
+           </>
            </Link>
            </Box>           
        
@@ -57,11 +58,13 @@ export default function Hotel(props){
             
 
             <Box sx={{display: 'flex',flexDirection:'column',pl:'10px',ml:'10px'}}>
-               <div>
+               <>
+               <h2>
                <Typography sx={{color:'#707070', fontWeight:'900', fontSize:'larger'}}>
-                   <h2> {props.propertDescription.data.body.propertyDescription.name}</h2>
+                   {props.propertDescription.data.body.propertyDescription.name}
                   
                 </Typography>
+                </h2>
 
                 <Typography sx={{color:'#707070',mt:'0px', pt:'0px', fontSize:'smaller'}}>
                
@@ -122,7 +125,7 @@ export default function Hotel(props){
                 
 
 
-               </div>
+               </>
               </Box>
            </Card>
            </Box>
@@ -135,11 +138,11 @@ export default function Hotel(props){
                 <Typography sx={{fontSize:'18px', mr:'10px', color:'#707070'}}>Amenities </Typography>
 
                 {props.propertDescription.data.body.amenities.map((amenity)=>(
-                    <Typography>
+                    <Typography key={amenity.heading}>
                         {amenity.heading}
                           <Typography sx={{display:'flex',fontSize:'10px', flexWrap:'false',flexDirection:'column'}}>
                             {amenity.listItems.map((amenityItem)=>(
-                              <Box sx={{display:'flex',flexWrap:'false',flexDirection:'row'}}>
+                              <Box sx={{display:'flex',flexWrap:'false',flexDirection:'row'}} key={amenityItem.heading}>
                               <Box sx={{border:'1px solid #d0d0d0', borderRadius:'5px',padding:'3px',m:'1px', color:'#f542a5',backgroundColor:'#F8F8F8', fontWeight:'bold'}}>
                               {amenityItem.heading} 
                               </Box>

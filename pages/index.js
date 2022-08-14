@@ -161,7 +161,7 @@ export default function Home(props) {
                         setCurrentPage(page);                        
                         
                      }
-                 }} />
+                 }} key={currentPage}/>
           </Stack>
           :
           ''

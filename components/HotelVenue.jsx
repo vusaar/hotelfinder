@@ -21,7 +21,7 @@ const HotelVenue=(props)=>{
   
   let stars  = []
   for(let i=0; i<five; i++){
-      stars.push(<StarBorderIcon/>)
+      stars.push(<StarBorderIcon key={i}/>)
   }
   
 
