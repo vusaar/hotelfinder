@@ -1,7 +1,10 @@
 import Image from 'next/image'
 import Carousel from 'react-material-ui-carousel'
 import { fetchAPI } from '../../utilities/fetchAPI'
+
 import Link from 'next/link'
+import { useRouter } from 'next/router'
+
 import {Button,Box, Card, Typography} from '@mui/material'
 import StarBorderIcon from '@mui/icons-material/StarBorder'
 import StarPurple500Icon from '@mui/icons-material/StarPurple500';
@@ -10,9 +13,14 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import SentimentVerySatisfiedIcon from '@mui/icons-material/SentimentVerySatisfied';
 import { blue } from '@mui/material/colors';
 
+import TopMenu  from '../../components/TopMenu';
+import Footer from  '../../components/Footer';
+
 export default function Hotel(props){
 
   //console.log(props.propertyImages)
+
+  const router = useRouter()
 
   let five = props.propertDescription.data.body.propertyDescription.starRating
   
@@ -26,19 +34,9 @@ export default function Hotel(props){
     return (
         
         <>
+          <TopMenu />
           <Box sx = {{display:'flex', flexDirection:'column'}}>
 
-        
-           <Box sx={{display:'flex', flexDirection:'row', borderBottom:'1px solid #edf2f7', p:2,m:2,fontWeight:800, fontSize:20 ,fontFamily:'sans-serif', color:blue[400]}}>
-           <Link href={{pathname : "/",
-                 }}  key='homelink'>
-                 
-                  <>
-           Hotel <Box sx={{color:'#f542a5'}} key='finder'>Finder</Box>
-           </>
-           </Link>
-           </Box>           
-       
 
            <Box sx = {{display:'flex', flexDirection:'row'}}>
           <Card sx={{flex:'1',justifyItems:'center',m:'5px'}}>
@@ -161,6 +159,7 @@ export default function Hotel(props){
 
           </Box>
         
+          <Footer />
         </>
     )
 }

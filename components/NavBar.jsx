@@ -7,23 +7,12 @@ import {InputBase,Paper,IconButton} from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 
 
+
 const NavBar =(props)=>{
 
      return (
          <>
-       
-       
-        <Box sx={{display:'flex', flexDirection:'row', borderBottom:'1px solid #edf2f7', p:2,m:2,fontWeight:800, fontSize:20 ,fontFamily:'sans-serif', color:blue[400]}}>
-        <Link href={{pathname : "/",
-                 }}  >
-             <>    
-           Hotel <Box sx={{color:'#f542a5'}}>Finder</Box>
-           </> 
-           </Link>  
-           </Box>
-                   
-        
-
+      
           <Box sx ={{display:'flex',backgroundColor:'#E7EBF0',justifyContent:'center', width:'98%',p:2,m:2}}>
 
           <Paper 

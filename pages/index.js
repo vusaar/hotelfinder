@@ -10,6 +10,9 @@ import AlertTitle from '@mui/material/AlertTitle';
 import Stack from '@mui/material/Stack';
 import Pagination from '@mui/material/Pagination'; 
 
+
+import TopMenu from '../components/TopMenu';
+import Footer from '../components/Footer';
 import NavBar  from '../components/NavBar'
 import SearchResults from '../components/SearchResults'
 import { fetchAPI } from '../utilities/fetchAPI'
@@ -107,6 +110,8 @@ export default function Home(props) {
   return (
     
       <Box sx = {{ flexDirection:'column',width:'98%'}}>
+
+      <TopMenu />
       
       <NavBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} doSearch={doSearch} />
         
@@ -171,6 +176,7 @@ export default function Home(props) {
        
         </>
         
+         <Footer />
       
         </Box>
     
@@ -181,7 +187,7 @@ export default function Home(props) {
 
 export async function getServerSideProps() {
   // Fetch data from external API
-  const data = await fetchAPI('https://hotels4.p.rapidapi.com/locations/v2/search?query=masvingo&locale=en_US&currency=USD');
+  const data = await fetchAPI('https://hotels4.p.rapidapi.com/locations/v2/search?query=BULAWAYO&locale=en_US&currency=USD');
 
 
     /*
