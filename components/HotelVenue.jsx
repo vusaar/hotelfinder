@@ -35,7 +35,7 @@ const HotelVenue=(props)=>{
    <Card sx={{display: 'flex', flexDirection:'row',width:'495px',alignItems:'center',m:2,p:1}}>
 
      <Box sx={{display: 'flex', pr:1}}>
-     <Image src={props.hotel.optimizedThumbUrls.srpDesktop} width='100%' height='100%'/>
+     <Image src={props.hotel.optimizedThumbUrls?props.hotel.optimizedThumbUrls.srpDesktop:''} width='100%' height='100%'/>
      </Box>
 
      <Box sx={{display: 'flex',flexDirection:'column'}}>

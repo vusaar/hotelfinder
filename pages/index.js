@@ -73,11 +73,11 @@ export default function Home(props) {
     const results = data.suggestions?data.suggestions.reduce((suggestion)=>{
        if(suggestion.group=='CITY_GROUP')
          return suggestion;
-    }):(()=>{return null});
+    }):(()=>{return []});
  
     let mySearchResults = [];
 
-    if(results.entities.length>0){
+    if(results.entities?.length>0){
  
 
       let search_url = encodeURI('https://hotels4.p.rapidapi.com/properties/list?destinationId='+results.entities[0].destinationId+'&pageNumber='+currentPage+'&pageSize='+pageSize+'&checkIn=2022-10-08&checkOut=2022-10-18&adults1=1&sortOrder=STAR_RATING_HIGHEST_FIRST&locale=en_US&currency=USD');
@@ -198,10 +198,11 @@ export async function getServerSideProps() {
        return data;
    }
 
-   const results = data.suggestions.reduce((suggestion)=>{
-      if(suggestion.group=='CITY_GROUP')
-        return suggestion;
-   });
+  
+   const results = data.suggestions?data.suggestions.reduce((suggestion)=>{
+    if(suggestion.group=='CITY_GROUP')
+      return suggestion;
+ }):(()=>{return []});
 
    // console.log(results);
 
