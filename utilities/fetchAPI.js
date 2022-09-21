@@ -18,7 +18,7 @@ export let fetchAPI = async(url)=>{
               vusaar@oal
               a5f15b0fcdmsh04f32f71141a3abp1bf41ejsnf30eb9a4e1e0
               */
-                'X-RapidAPI-Key': '69fbaa4786mshf1a4b1660ccac93p110361jsn4527369f82a0',
+                'X-RapidAPI-Key': '333f2ec9e1msh4b8e199f254fd3dp18420bjsndaf7c881b06c',
                 'X-RapidAPI-Host': 'hotels4.p.rapidapi.com'
               }
         }

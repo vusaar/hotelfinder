@@ -70,10 +70,10 @@ export default function Home(props) {
      }
     
 
-    const results = data.suggestions.reduce((suggestion)=>{
+    const results = data.suggestions?data.suggestions.reduce((suggestion)=>{
        if(suggestion.group=='CITY_GROUP')
          return suggestion;
-    });
+    }):(()=>{return null});
  
     let mySearchResults = [];
 
